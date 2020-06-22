@@ -64,9 +64,7 @@ const employees = [{
 }]
 
 class App extends Component {
-  state = {
-    employees: employees
-  }
+  
   
   // handleSort = () =>{
   //   let sorted = this.state.employees.sort((a, b) => {
@@ -103,7 +101,7 @@ class App extends Component {
     //   })
     // }
 
-handleSort = () => { this.state.employees.sort((a, b) => {
+handleSort = () => { employees.sort((a, b) => {
     let nameA = a.last_name
     let nameB = b.last_name
     if (nameA < nameB) {
@@ -120,20 +118,20 @@ handleSort = () => { this.state.employees.sort((a, b) => {
 
   render () {
     return (
-      <>
-      <div className='col=md=6'>
-        <p>
-        <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
-        </p>
-        <p>
-        <button onClick={this.handleJobTitle} className="btn btn-success">Sort by job title</button>
-        </p>
+    
+      <div className='container'>
+        <div className='col-md-6'>
+          <p>
+          <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
+          </p>
+          <p>
+          <button onClick={this.handleJobTitle} className="btn btn-success">Sort by job title</button>
+          </p>
+        </div>
+        <div className='col-md-6'>
+          <Employee employees={employees} />
+        </div>
       </div>
-      <div className='col=md=6'>
-        <Employee
-        employees={this.state.employees} />
-      </div>
-      </>
     )
   }
 }

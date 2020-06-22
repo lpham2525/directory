@@ -64,18 +64,16 @@ import React from 'react'
 
 const Employee = props => {
   console.log('employees props = ', props)
+
   return (
     <ul>
-      {props.employees.map(employee => {
-        return (
-          <div>
-            <li>{employee.first_name} {employee.last_name}</li>
-            <p>{employee.email}
-            <br />
-            {employee.Job_Title}</p>
-          </div>
-        )
-      }
+      {props.employees.map(employee =>
+        <li key={employee.id}>{employee.first_name} {employee.last_name}
+          <br />
+          {employee.email}
+          <br />
+          {employee.Job_Title}
+        </li>
       )}
     </ul>
   )
