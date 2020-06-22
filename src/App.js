@@ -88,8 +88,12 @@ class App extends Component {
     return (
       <>
       <div className='col=md=6'>
-        <button onClick={this.handleSort} class="btn btn-primary">Sort by last name</button>
-        <button onClick={this.handleJobTitle} class="btn btn-success">Sort by job title</button>
+        <p>
+        <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
+        </p>
+        <p>
+        <button onClick={this.handleJobTitle} className="btn btn-success">Sort by job title</button>
+        </p>
       </div>
       <div className='col=md=6'>
         <Employee
