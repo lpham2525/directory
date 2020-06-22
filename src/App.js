@@ -68,21 +68,55 @@ class App extends Component {
     employees: employees
   }
   
-  handleSort = () =>{
-    let sorted = this.state.employees.sort((a, b) => {
-      // let textA = a.last_name
-      // let textB = b.last_name
-      if(a.last_name < b.last_name) { return -1 }
-      if (a.last_name > b.last_name) { return 1 }
-    })
-    }
+  // handleSort = () =>{
+  //   let sorted = this.state.employees.sort((a, b) => {
+  //     console.log('testing handleSort')
+  //     // let textA = a.last_name
+  //     // let textB = b.last_name
+  //     if(a.last_name < b.last_name) { return -1 }
+  //     if (a.last_name > b.last_name) { return 1 }
+  //     return 0
+  //   })
+  //   }
 
-    handleJobTitle= () => {
-      let jobTitle = this.state.employees.sort((a,b) =>{
-        let master = a.Job_Title.value
-        let padawan = b.Job_Title.value
-      })
+//   handleSort = (props) => {
+//   let sortOrder = 1
+
+//   if (props[0] === "-") {
+//     sortOrder = -1;
+//     props = props.substr(1);
+//   }
+
+//   return function (a, b) {
+//     if (sortOrder === -1) {
+//       return b[props].localeCompare(a[props]);
+//     } else {
+//       return a[props].localeCompare(b[props]);
+//     }
+//   }
+// }
+
+    // handleJobTitle= () => {
+    //   let jobTitle = this.state.employees.sort((a,b) =>{
+    //     let master = a.Job_Title.value
+    //     let padawan = b.Job_Title.value
+    //   })
+    // }
+
+handleSort = () => { this.state.employees.sort((a, b) => {
+    let nameA = a.last_name
+    let nameB = b.last_name
+    if (nameA < nameB) {
+      return -1; //nameA comes first
     }
+    if (nameA > nameB) {
+      return 1; // nameB comes first
+    }
+    return 0;  // names must be equal
+  })
+
+  console.log("handleSort")
+}
 
   render () {
     return (
