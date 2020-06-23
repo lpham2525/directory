@@ -68,10 +68,9 @@ class App extends Component {
 
   state = {
     employees: employees,
-    nameSort: [],
-    sortValue: '',
     inputValue: '',
-    category: 'last_name'
+    category: 'last_name',
+    firstName: 'first_name'
   }
 
   handleJobTitle = () => {
@@ -123,27 +122,20 @@ class App extends Component {
       return employee[this.state.category].toLowerCase() === this.state.inputValue.toLowerCase()
     })
     this.setState({
-    employees: found
+      employees: found, inputValue: ''
     })
 }
 
-
-  // handleSort= () => { employees.sort((a, b) => {
-  //   let sortByLast =[]
-  //     let nameA = a.last_name
-  //     let nameB = b.last_name
-  //     if (nameA < nameB) {
-  //       return -1; //nameA comes first
-  //     }
-  //     if (nameA > nameB) {
-  //       return 1; // nameB comes first
-  //     }
-  //     return 0;  // names must be equal
-  //   })
-
-  //   console.log(employees)
-  //   sortByLast.push(employees)
-  // }
+  handleFirst = event => {
+    event.preventDefault()
+    console.log(event.target.value)
+    let found = employees.filter((employee) => {
+      return employee.first_name.toLowerCase() === this.state.inputValue.toLowerCase()
+    })
+    this.setState({
+      employees: found, inputValue: ''
+    })
+  }
 
   render() {
     return (
@@ -159,7 +151,8 @@ class App extends Component {
           <Form
             inputValue={this.state.inputValue}
             handleInputChange={this.handleInputChange}
-            handleSearch={this.handleSearch} />
+            handleSearch={this.handleSearch}
+            handleFirst={this.handleFirst} />
         </div>
         <div className='col-md-6'>
           <Employee employees={this.state.employees} />
