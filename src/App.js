@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Employee from './components/Employee'
 import Form from './components/Form'
+import Jumbotron from './components/Jumbotron'
 let employees = [{
   id: 1,
   first_name: 'Barnaby',
@@ -141,7 +142,11 @@ class App extends Component {
     return (
 
       <div className='container'>
-        <div className='col-md-6'>
+        <div className= 'row'>
+          <Jumbotron />
+        </div>
+        <div className='row'>
+        <div className='col'>
           <p>
             <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
           </p>
@@ -154,8 +159,9 @@ class App extends Component {
             handleSearch={this.handleSearch}
             handleFirst={this.handleFirst} />
         </div>
-        <div className='col-md-6'>
+        <div className='col'>
           <Employee employees={this.state.employees} />
+        </div>
         </div>
       </div>
     )
