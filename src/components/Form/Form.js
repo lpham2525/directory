@@ -8,10 +8,10 @@ const Form = props => {
         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="inputValue" value={props.inputValue} onChange={props.handleInputChange} />
       </p>
       <p>
-        <button className="btn btn-outline-info my-2 my-sm-0" type="submit" onClick={props.handleFirst}>Search by First Name</button>
+        <button className="btn btn-warning my-2 my-sm-0" type="submit" onClick={props.handleFirst}>Search by First Name</button>
       </p>
       <p>
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit" onClick={props.handleSearch}>Search by Last Name</button>
+        <button className="btn btn-dark my-2 my-sm-0" type="submit" onClick={props.handleSearch}>Search by Last Name</button>
       </p>
     </form>
   )

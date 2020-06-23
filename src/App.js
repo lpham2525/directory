@@ -151,15 +151,13 @@ class App extends Component {
             <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
           </p>
           <p>
-            <button onClick={this.handleJobTitle} className="btn btn-success">Sort by job title</button>
+            <button onClick={this.handleJobTitle} className="btn btn-success">Sort by rank</button>
           </p>
           <Form
             inputValue={this.state.inputValue}
             handleInputChange={this.handleInputChange}
             handleSearch={this.handleSearch}
             handleFirst={this.handleFirst} />
-        </div>
-        <div className='col'>
           <Employee employees={this.state.employees} />
         </div>
         </div>
