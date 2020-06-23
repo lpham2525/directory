@@ -1,8 +1,10 @@
 # Unit 19 React: Employee Directory
 
+![Employee Directory Screenshot](./public/screen.png?raw=true "employee directory")
+
 ## Overview
 
-This is an employee directory created with React. It breaks up the application's UI into components, manage component state, and respond to user events.
+This is an employee directory created with React. It breaks up the application's UI into components, manages component state, and responds to user events.
 
 ## User Story
 
