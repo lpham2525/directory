@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
 import Employee from './components/Employee'
-const employees = [{
+import Form from './components/Form'
+let employees = [{
   id: 1,
   first_name: 'Barnaby',
   last_name: 'Seabright',
@@ -64,72 +65,104 @@ const employees = [{
 }]
 
 class App extends Component {
-  
-  
-  // handleSort = () =>{
-  //   let sorted = this.state.employees.sort((a, b) => {
-  //     console.log('testing handleSort')
-  //     // let textA = a.last_name
-  //     // let textB = b.last_name
-  //     if(a.last_name < b.last_name) { return -1 }
-  //     if (a.last_name > b.last_name) { return 1 }
-  //     return 0
-  //   })
-  //   }
 
-//   handleSort = (props) => {
-//   let sortOrder = 1
+  state = {
+    employees: employees,
+    nameSort: [],
+    sortValue: '',
+    inputValue: '',
+    category: 'last_name'
+  }
 
-//   if (props[0] === "-") {
-//     sortOrder = -1;
-//     props = props.substr(1);
-//   }
+  handleJobTitle = () => {
+    let employees=this.state.employees
+    employees.sort((a, b) => {
+      let master = a.Job_Title
+      let padawan = b.Job_Title
+      if (master < padawan) {
+        return -1
+      }
+      if (master > padawan) {
+        return 1
+      }
+      return 0
+    })
+    // console.log(employees)
+    this.setState({
+      employees
+    })
+  }
 
-//   return function (a, b) {
-//     if (sortOrder === -1) {
-//       return b[props].localeCompare(a[props]);
-//     } else {
-//       return a[props].localeCompare(b[props]);
-//     }
-//   }
-// }
+  handleSort = () => {
+    let employees = this.state.employees
+    employees.sort((a, b) => {
+      let nameA = a.last_name
+      let nameB = b.last_name
+      if (nameA < nameB) {
+        return -1
+      }
+      if (nameA > nameB) {
+        return 1
+      }
+      return 0
+    })
+    // console.log(this.state.employees)
+    this.setState({
+      employees
+    })
+  }
 
-    // handleJobTitle= () => {
-    //   let jobTitle = this.state.employees.sort((a,b) =>{
-    //     let master = a.Job_Title.value
-    //     let padawan = b.Job_Title.value
-    //   })
-    // }
+  handleInputChange = event => {
+    this.setState({ [event.target.name]: event.target.value })
+  }
 
-handleSort = () => { employees.sort((a, b) => {
-    let nameA = a.last_name
-    let nameB = b.last_name
-    if (nameA < nameB) {
-      return -1; //nameA comes first
-    }
-    if (nameA > nameB) {
-      return 1; // nameB comes first
-    }
-    return 0;  // names must be equal
-  })
-
-  console.log("handleSort")
+  handleSearch = event => {
+    event.preventDefault()
+    console.log(event.target.value) 
+    let found = employees.filter((employee) => {
+      return employee[this.state.category].toLowerCase() === this.state.inputValue.toLowerCase()
+    })
+    this.setState({
+    employees: found
+    })
 }
 
-  render () {
+
+  // handleSort= () => { employees.sort((a, b) => {
+  //   let sortByLast =[]
+  //     let nameA = a.last_name
+  //     let nameB = b.last_name
+  //     if (nameA < nameB) {
+  //       return -1; //nameA comes first
+  //     }
+  //     if (nameA > nameB) {
+  //       return 1; // nameB comes first
+  //     }
+  //     return 0;  // names must be equal
+  //   })
+
+  //   console.log(employees)
+  //   sortByLast.push(employees)
+  // }
+
+  render() {
     return (
-    
+
       <div className='container'>
         <div className='col-md-6'>
           <p>
-          <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
+            <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
           </p>
           <p>
-          <button onClick={this.handleJobTitle} className="btn btn-success">Sort by job title</button>
+            <button onClick={this.handleJobTitle} className="btn btn-success">Sort by job title</button>
           </p>
+          <Form
+            inputValue={this.state.inputValue}
+            handleInputChange={this.handleInputChange}
+            handleSearch={this.handleSearch} />
         </div>
         <div className='col-md-6'>
-          <Employee employees={employees} />
+          <Employee employees={this.state.employees} />
         </div>
       </div>
     )

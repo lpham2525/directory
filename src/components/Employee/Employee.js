@@ -79,17 +79,4 @@ const Employee = props => {
   )
 }
 
-// const Employee = props => {
-//   console.log('employees props = ', props)
-//   return (
-//     <ul>
-//       <div>
-//         <li>{employee.first_name} {employee.last_name}</li>
-//         <p>{employee.email}</p>
-//         <p>{employee.Job_Title}</p>
-//       </div>
-//     </ul>
-//   )
-// }
-
 export default Employee
