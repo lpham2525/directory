@@ -75,7 +75,7 @@ class App extends Component {
   }
 
   handleJobTitle = () => {
-    let employees=this.state.employees
+    let employees = this.state.employees
     employees.sort((a, b) => {
       let master = a.Job_Title
       let padawan = b.Job_Title
@@ -106,7 +106,6 @@ class App extends Component {
       }
       return 0
     })
-    // console.log(this.state.employees)
     this.setState({
       employees
     })
@@ -118,14 +117,14 @@ class App extends Component {
 
   handleSearch = event => {
     event.preventDefault()
-    console.log(event.target.value) 
+    console.log(event.target.value)
     let found = employees.filter((employee) => {
       return employee[this.state.category].toLowerCase() === this.state.inputValue.toLowerCase()
     })
     this.setState({
       employees: found, inputValue: ''
     })
-}
+  }
 
   handleFirst = event => {
     event.preventDefault()
@@ -138,28 +137,35 @@ class App extends Component {
     })
   }
 
+  // handleReset = () => {
+  //   let reset =
+  //     this.setState({
+  //       this.state.employees
+  //     })
+  // }
+
   render() {
     return (
 
       <div className='container'>
-        <div className= 'row'>
+        <div className='row'>
           <Jumbotron />
         </div>
         <div className='row'>
-        <div className='col'>
-          <p>
-            <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
-          </p>
-          <p>
-            <button onClick={this.handleJobTitle} className="btn btn-success">Sort by rank</button>
-          </p>
-          <Form
-            inputValue={this.state.inputValue}
-            handleInputChange={this.handleInputChange}
-            handleSearch={this.handleSearch}
-            handleFirst={this.handleFirst} />
-          <Employee employees={this.state.employees} />
-        </div>
+          <div className='col'>
+            <p>
+              <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
+            </p>
+            <p>
+              <button onClick={this.handleJobTitle} className="btn btn-success">Sort by rank</button>
+            </p>
+            <Form
+              inputValue={this.state.inputValue}
+              handleInputChange={this.handleInputChange}
+              handleSearch={this.handleSearch}
+              handleFirst={this.handleFirst} />
+            <Employee employees={this.state.employees} />
+          </div>
         </div>
       </div>
     )
