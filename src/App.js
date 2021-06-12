@@ -3,6 +3,7 @@ import './App.css'
 import Employee from './components/Employee'
 import Form from './components/Form'
 import Jumbotron from './components/Jumbotron'
+
 let employees = [{
   id: 1,
   first_name: 'Barnaby',
@@ -74,7 +75,7 @@ class App extends Component {
     firstName: 'first_name'
   }
 
-  handleJobTitle = () => {
+  handleSortByRank = () => {
     let employees = this.state.employees
     employees.sort((a, b) => {
       let master = a.Job_Title
@@ -87,13 +88,30 @@ class App extends Component {
       }
       return 0
     })
-    // console.log(employees)
     this.setState({
       employees
     })
   }
 
-  handleSort = () => {
+  handleSortFName = () => {
+    let employees = this.state.employees
+    employees.sort((a, b) => {
+      let nameA = a.first_name
+      let nameB = b.first_name
+      if (nameA < nameB) {
+        return -1
+      }
+      if (nameA > nameB) {
+        return 1
+      }
+      return 0
+    })
+    this.setState({
+      employees
+    })
+  }
+
+  handleSortLName = () => {
     let employees = this.state.employees
     employees.sort((a, b) => {
       let nameA = a.last_name
@@ -137,16 +155,15 @@ class App extends Component {
     })
   }
 
-  // handleReset = () => {
-  //   let reset =
-  //     this.setState({
-  //       this.state.employees
-  //     })
-  // }
+  handleReset = () => {
+    let reset = window.location.reload() 
+      this.setState({
+      employees: reset, inputValue: ''
+      })
+  }
 
   render() {
     return (
-
       <div className='container'>
         <div className='row'>
           <Jumbotron />
@@ -154,10 +171,16 @@ class App extends Component {
         <div className='row'>
           <div className='col'>
             <p>
-              <button onClick={this.handleSort} className="btn btn-primary">Sort by last name</button>
+            <button onClick={this.handleSortFName} className="btn btn-primary">Sort by first name</button>
             </p>
             <p>
-              <button onClick={this.handleJobTitle} className="btn btn-success">Sort by rank</button>
+              <button onClick={this.handleSortLName} className="btn btn-primary">Sort by last name</button>
+            </p>
+            <p>
+              <button onClick={this.handleSortByRank} className="btn btn-success">Sort by rank</button>
+            </p>
+            <p>
+              <button onClick={this.handleReset} className="btn btn-warning">Reset list</button>
             </p>
             <Form
               inputValue={this.state.inputValue}
