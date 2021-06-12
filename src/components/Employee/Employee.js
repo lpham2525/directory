@@ -3,23 +3,33 @@ import React from 'react'
 const Employee = props => {
   console.log('employees props = ', props)
   return (
-    <ul>
-      {props.employees.map(employee =>
+    <>
+      <table class="table table-dark table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Rank</th>
+            <th scope="col">Home World</th>
+          </tr>
+        </thead>
+        <tbody>
+    {props.employees.map(employee =>
         <>
-          <div className='card text-white bg-info mb-3' style={{ maxWidth: '18rem' }} key={employee.id}>
-            <div className='card-header'>{employee.first_name} {employee.last_name}
-            </div>
-            <div className='card-body'>
-              <p className='card-text'>
-                {employee.email}
-                <br />
-                Rank: {employee.Job_Title}
-              </p>
-            </div>
-          </div>
+            <tr>
+                <td>{employee.first_name}</td>
+                <td>{employee.last_name}</td>
+                <td>{employee.email}</td>
+                <td>{employee.Job_Title}</td>
+                <td>{employee.home_world}</td>
+              </tr>
         </>
-      )}
-    </ul>
+    )}
+            </tbody>
+          </table>
+        </>
   )
 }
 

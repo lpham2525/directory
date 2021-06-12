@@ -170,21 +170,6 @@ class App extends Component {
         </div>
         <div className='row'>
           <div className='col'>
-            {/* <p>
-            <button onClick={this.handleSortFName} className="btn btn-primary">Sort by first name</button>
-            </p>
-            <p>
-              <button onClick={this.handleSortLName} className="btn btn-primary">Sort by last name</button>
-            </p>
-            <p>
-              <button onClick={this.handleSortByRank} className="btn btn-success">Sort by rank</button>
-            </p>
-            <p>
-              <button onClick={this.handleReset} className="btn btn-warning">Reset list</button>
-            </p> */}
-
-
-
             <Form
               inputValue={this.state.inputValue}
               handleInputChange={this.handleInputChange}
