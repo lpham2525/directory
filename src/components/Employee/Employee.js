@@ -4,7 +4,7 @@ const Employee = props => {
   console.log('employees props = ', props)
   return (
     <>
-      <table class="table table-dark table-striped table-hover">
+      <table className="table table-dark table-striped table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -19,6 +19,7 @@ const Employee = props => {
     {props.employees.map(employee =>
         <>
             <tr>
+                <td>{employee.id}</td>
                 <td>{employee.first_name}</td>
                 <td>{employee.last_name}</td>
                 <td>{employee.email}</td>
