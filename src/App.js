@@ -170,7 +170,7 @@ class App extends Component {
         </div>
         <div className='row'>
           <div className='col'>
-            <p>
+            {/* <p>
             <button onClick={this.handleSortFName} className="btn btn-primary">Sort by first name</button>
             </p>
             <p>
@@ -181,12 +181,24 @@ class App extends Component {
             </p>
             <p>
               <button onClick={this.handleReset} className="btn btn-warning">Reset list</button>
-            </p>
+            </p> */}
+
+
+
             <Form
               inputValue={this.state.inputValue}
               handleInputChange={this.handleInputChange}
               handleSearch={this.handleSearch}
               handleFirst={this.handleFirst} />
+              <p>
+            <button onClick={this.handleSortFName} className="btn btn-primary">Sort by first name</button>
+
+            <button onClick={this.handleSortLName} className="btn btn-success">Sort by last name</button>
+
+            <button onClick={this.handleSortByRank} className="btn btn-secondary">Sort by rank</button>
+
+            <button onClick={this.handleReset} className="btn btn-danger">Reset list</button>
+            </p>
             <Employee employees={this.state.employees} />
           </div>
         </div>
