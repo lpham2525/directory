@@ -17,8 +17,8 @@ const Employee = props => {
         </thead>
         <tbody>
     {props.employees.map(employee =>
-        <>
-            <tr>
+      <>
+        <tr>
                 <td>{employee.id}</td>
                 <td>{employee.first_name}</td>
                 <td>{employee.last_name}</td>

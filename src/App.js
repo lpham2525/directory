@@ -103,7 +103,7 @@ class App extends Component {
     })
   }
 
-  handleSortFName = () => {
+  handleSortFirstName = () => {
     let employees = this.state.employees
     employees.sort((a, b) => {
       let nameA = a.first_name
@@ -121,7 +121,7 @@ class App extends Component {
     })
   }
 
-  handleSortLName = () => {
+  handleSortLastName = () => {
     let employees = this.state.employees
     employees.sort((a, b) => {
       let nameA = a.last_name
@@ -166,7 +166,9 @@ class App extends Component {
   }
 
   handleReset = () => {
-    let reset = window.location.reload() 
+    let reset = employees.sort((a,b) => {
+      return a.id-b.id
+    })
       this.setState({
       employees: reset, inputValue: ''
       })
@@ -186,9 +188,9 @@ class App extends Component {
               handleSearch={this.handleSearch}
               handleFirst={this.handleFirst} />
               <p>
-            <button onClick={this.handleSortFName} className="btn btn-primary">Sort by first name</button>
+            <button onClick={this.handleSortFirstName} className="btn btn-primary">Sort by first name</button>
 
-            <button onClick={this.handleSortLName} className="btn btn-success">Sort by last name</button>
+            <button onClick={this.handleSortLastName} className="btn btn-success">Sort by last name</button>
 
             <button onClick={this.handleSortByRank} className="btn btn-secondary">Sort by rank</button>
 
