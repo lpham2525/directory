@@ -26,9 +26,11 @@ The user should be able to:
 
 ## Technologies Used
 
-Front-end: React JS 
-CSS: Bootstrap
-Deployed on: GitHub Pages
+  * Front-end: React JS 
+
+  * CSS: Bootstrap
+  
+  * Deployed on: GitHub Pages
 
 ## How to use
 
