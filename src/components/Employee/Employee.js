@@ -11,7 +11,7 @@ const Employee = props => {
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
-            <th scope="col">Rank</th>
+            <th scope="col">Class</th>
             <th scope="col">Home World</th>
           </tr>
         </thead>

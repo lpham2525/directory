@@ -4,30 +4,31 @@ import Employee from './components/Employee'
 import Form from './components/Form'
 import Jumbotron from './components/Jumbotron'
 
-let employees = [{
-    id: 1,
-    first_name: 'R2-D2',
-    last_name: null,
-    email: 'r2d2@astromech.com',
-    Job_Title: 'Robot',
-    home_world: 'Naboo'
-  },
-  {
-    id: 2,
-    first_name: 'C-3PO',
-    last_name: null,
-    email: 'c3po@protocol.com',
-    Job_Title: 'Robot',
-    home_world: 'Tatooine',
-  },
-  {
-  id: 3,
-  first_name: 'Luke',
-  last_name: 'Skywalker',
-  email: 'luke.skywalker@tatooine.com',
-  Job_Title: 'Padawan',
-  home_world: 'Tatooine'
-  }, 
+let employees = [
+{
+  id: 1,
+  first_name: 'R2-D2',
+  last_name: 'Droid',
+  email: 'r2d2@astromech.com',
+  Job_Title: 'Rebel Droid',
+  home_world: 'Naboo'
+},
+{
+  id: 2,
+  first_name: 'C-3PO',
+  last_name: 'Droid',
+  email: 'c3po@protocol.com',
+  Job_Title: 'Rebel Droid',
+  home_world: 'Tatooine',
+},
+{
+id: 3,
+first_name: 'Luke',
+last_name: 'Skywalker',
+email: 'luke.skywalker@tatooine.com',
+Job_Title: 'Padawan',
+home_world: 'Tatooine'
+}, 
 {
   id: 4,
   first_name: 'Leia',
@@ -44,22 +45,22 @@ let employees = [{
   Job_Title: 'Smuggler',
   home_world: 'Corellia'
 },
-  {
-    id: 6,
-    first_name: 'Chewbacca',
-    last_name: null,
-    email: 'chewbacca@kashyyyk.com',
-    Job_Title: 'Smuggler',
-    home_world: "Kashyyyk",
-  },
-  {
-    id: 7,
-    first_name: 'Anakin',
-    last_name: 'Skywalker',
-    email: 'anakin.skywalker@podracer.com',
-    Job_Title: 'Padawan',
-    home_world: 'Dagobah'
-  },
+{
+  id: 6,
+  first_name: 'Chewbacca',
+  last_name: 'Wookie',
+  email: 'chewbacca@kashyyyk.com',
+  Job_Title: 'Smuggler',
+  home_world: "Kashyyyk",
+},
+{
+  id: 7,
+  first_name: 'Anakin',
+  last_name: 'Skywalker',
+  email: 'anakin.skywalker@podracer.com',
+  Job_Title: 'Padawan',
+  home_world: 'Dagobah'
+},
 {
   id: 8,
   first_name: 'Baby',
@@ -67,7 +68,8 @@ let employees = [{
   email: 'emailwhatis@grandmaster.com',
   Job_Title: 'Jedi Master',
   home_world: 'unknown'
-}, {
+}, 
+{
   id: 9,
   first_name: 'Obi-Wan',
   last_name: 'Kenobi',
@@ -75,36 +77,14 @@ let employees = [{
   Job_Title: 'Jedi Master',
   home_world: 'Stewjon'
 }, 
-  {
-    id: 10,
-    first_name: 'Lando',
-    last_name: 'Calrissian',
-    email: 'lando.calrissian@socorro.com',
-    Job_Title: 'Smuggler',
-    home_world: 'Socorro'
-  },{
-  id: 11,
-  first_name: 'Qui-Gon',
-  last_name: 'Jinn',
-  email: 'quigon.jinn@coruscant.com',
-  Job_Title: 'Jedi Master',
-  home_world: 'Coruscant'
-}, {
-  id: 12,
-  first_name: 'Rey',
-  last_name: 'Skywalker',
-  email: 'rey.skywalker@jakku.com',
-  Job_Title: 'Padawan',
-  home_world: 'Jakku'
-}, {
-  id:13,
-  first_name: 'Ben',
-  last_name: 'Solo',
-  email: 'ben.solo@chandrila.com',
-  Job_Title: 'Padawan',
-  home_world: 'Chandrila'
-}
-]
+{
+  id: 10,
+  first_name: 'Lando',
+  last_name: 'Calrissian',
+  email: 'lando.calrissian@socorro.com',
+  Job_Title: 'Smuggler',
+  home_world: 'Socorro'
+}]
 
 class App extends Component {
 
@@ -222,7 +202,7 @@ class App extends Component {
 
               <button onClick={this.handleSortLastName} className="btn btn-success">Sort by last name</button>
 
-              <button onClick={this.handleSortByJob} className="btn btn-secondary">Sort by occupation</button>
+              <button onClick={this.handleSortByJob} className="btn btn-secondary">Sort by class</button>
 
               <button onClick={this.handleReset} className="btn btn-danger">Reset list</button>
             </p>

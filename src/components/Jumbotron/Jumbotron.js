@@ -4,8 +4,8 @@ const Jumbotron = () => {
   return (
     <div className="jumbotron">
       <div className="container">
-        <h1 className="display-4">Masters of the Force Directory</h1>
-        <p className="lead">A convenient directory of basic information about Jedi Masters and padawans.</p>
+        <h1 className="display-4">Rebel Alliance Directory</h1>
+        <p className="lead">A directory of information about the members of the Resistance.</p>
       </div>
     </div>
   )
