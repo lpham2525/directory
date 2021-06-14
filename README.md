@@ -1,26 +1,35 @@
 # Unit 19 React: Employee Directory
 
-![Employee Directory Screenshot](./public/screen.png?raw=true "employee directory")
+![Employee Directory Screenshot](./public/directory.png?raw=true "employee directory")
 
 ## Overview
 
-This is an employee directory created with React. It breaks up the application's UI into components, manages component state, and responds to user events.
+This is a informational directory created with React. It breaks up the application's UI into components, manages component state, and responds to user events.
 
 ## User Story
 
-* As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+* As a user, I want to be able to view the entire directory at once so that I have quick access to information.
 
 ## Business Context
 
-An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. It would be particularly helpful to be able to filter employees by name.
+An associate or manager would benefit greatly from being able to view non-sensitive data about other associates. It would be particularly helpful to be able to filter people by name.
 
-## Acceptance Criteria
+## Criteria
 
-Given a table of random users, when the user loads the page, a table of employees should render. 
+When the user loads the page, a table of associates should render. 
 
 The user should be able to:
 
   * Sort the table by at least one category
 
-  * Filter the users by at least one property.
+  * Filter the associates by at least one property.
 
+## Technologies Used
+
+Front-end: React JS 
+CSS: Bootstrap
+Deployed on: GitHub Pages
+
+## How to use
+
+To run the rebel alliance directory locally, enter "npm start" in the terminal. This should automatically bring you to your default browser where you can navigate through the directory. 
