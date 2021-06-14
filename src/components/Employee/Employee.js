@@ -3,7 +3,6 @@ import React from 'react'
 const Employee = props => {
   console.log('employees props = ', props)
   return (
-    <>
       <table className="table table-dark table-striped table-hover">
         <thead>
           <tr>
@@ -16,21 +15,18 @@ const Employee = props => {
           </tr>
         </thead>
         <tbody>
-    {props.employees.map(employee =>
-      <>
-        <tr>
-                <td>{employee.id}</td>
-                <td>{employee.first_name}</td>
-                <td>{employee.last_name}</td>
-                <td>{employee.email}</td>
-                <td>{employee.Job_Title}</td>
-                <td>{employee.home_world}</td>
-              </tr>
-        </>
-    )}
-            </tbody>
-          </table>
-        </>
+          {props.employees.map(employee =>
+            <tr>
+              <td>{employee.id}</td>
+              <td>{employee.first_name}</td>
+              <td>{employee.last_name}</td>
+              <td>{employee.email}</td>
+              <td>{employee.Job_Title}</td>
+              <td>{employee.home_world}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
   )
 }
 
