@@ -25,6 +25,7 @@
   "browserslist": {
     "production": [
       ">0.2%",
+      "not dead",
       "not op_mini all"
     ],
     "development": [
@@ -34,6 +35,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^3.2.1"
   }
 }
