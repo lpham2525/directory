@@ -6,6 +6,10 @@
 
 This is a informational directory created with React. It breaks up the application's UI into components, manages component state, and responds to user events.
 
+## Live link
+
+Try it out here: https://lpham2525.github.io/directory/
+
 ## User Story
 
 * As a user, I want to be able to view the entire directory at once so that I have quick access to information.
